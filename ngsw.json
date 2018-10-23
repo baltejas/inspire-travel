@@ -1,0 +1,51 @@
+{
+  "configVersion": 1,
+  "index": "https://baltejas.github.io/inspire-search/“/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://baltejas.github.io/inspire-search/“/favicon.ico",
+        "https://baltejas.github.io/inspire-search/“/index.html"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://baltejas.github.io/inspire-search/“/assets/amadeus.png",
+        "https://baltejas.github.io/inspire-search/“/assets/load.gif"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://baltejas.github.io/inspire-search/“/assets/amadeus.png": "e7032d470f814cf263dbc43d6ecaf2c9a1b6bfdd",
+    "https://baltejas.github.io/inspire-search/“/assets/load.gif": "26b252a564142db4fd78c3b4b08a430695edb395",
+    "https://baltejas.github.io/inspire-search/“/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://baltejas.github.io/inspire-search/“/index.html": "89cd510a30c68b47990cd836f71369b9a139df6b"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

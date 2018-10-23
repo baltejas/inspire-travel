@@ -1,0 +1,14 @@
+{
+  "name": "Hackathon Web App",
+  "short_name": "PWA",
+  "description": "hack2018",  
+  "icons": [{
+    "src": "assets/amadeus.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#673ab7"
+}

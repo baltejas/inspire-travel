@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hackathon Webapp</title>
+  <base href="https://baltejas.github.io/inspire-search/“">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#673ab7">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="styles.4d254bc3f4a86e3283a9.css"></head>
+<body>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '2189450841310526',
+            xfbml      : true,
+            version    : 'v3.1'
+          });
+          FB.AppEvents.logPageView();
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+    </script>
+  <app-facebook></app-facebook>
+<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.ca675e00d8c2c497e471.js"></script><script type="text/javascript" src="main.0f09315a6410857b2ae8.js"></script></body>
+</html>
