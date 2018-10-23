@@ -8,7 +8,7 @@ const headers = new HttpHeaders()
 export class FacebookService {
     
     baseUrl: string = "https://graph.facebook.com/v3.1/me";
-    test: string = "?access_token=EAAfHSzZBmRT4BAChpNRWxltXNU51czUhlk0R70IK8BYea9cUZCeqZCXwUqr9apZCjZAy6Lur5AMF4SaJ2iHPOOFjCwPfvEPsKMkmBmUhhjDcQs9iVOEe4wtrM4QumwOK6CZCmADZBqS5YAq4gtt9StN8bpG84uosc3rQCEbCtxsRiC7Y8EE4gpZBDSSupLbbnmwZD"
+    test: string = "?access_token=EAAfHSzZBmRT4BAChpNRWxltXNU51czUhlk0R70IK8BYea9cUZCeqZCXwUqr9apZCjZAy6Lur5AMF4SaJ2iHPOOFjCwPfvEPsKMkmBmUhhjDcQs9iVOEe4wtrM4QumwOK6CZCmADZBqS5YAq4gtt9StN8bpG84uosc3rQCEbCtxsRiC7Y8EE4gpZBDSSupLbbnmw"
     
     constructor(private http: HttpClient) {}
    
