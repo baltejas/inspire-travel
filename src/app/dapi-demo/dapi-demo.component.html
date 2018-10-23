@@ -1,0 +1,15 @@
+<div class="container-fluid dapi-containe">
+
+  <div class="row">
+    <h3>Calling DxAPI Calendar from {{from}} to {{to}}</h3>
+  </div>
+  <div class="row">
+    <h6>This will not work using ng serve</h6>
+  </div>
+
+  <img src="../../assets/load.gif" alt="Loading..." *ngIf="loading">
+
+  <div class="row search-results" *ngIf="!loading">
+    <pre>{{result}}</pre>
+  </div>
+</div>

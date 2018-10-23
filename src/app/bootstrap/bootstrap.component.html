@@ -1,0 +1,26 @@
+<div class="container-fluid search-page-container">
+
+  <div class="row">
+    <h3>This is a Bootstrap container</h3>
+    <span class="glyphicon glyphicon-search"></span>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">Search for an airport:</div>
+    <div class="col-xs-4">
+        <input
+          type="text"
+          matInput
+          placeholder="Name"
+          (input)="onInputAirportNames($event)" />
+     </div>
+  </div>
+
+  <div class="row"><h6>Typing in the above field will query Couchbase (doesn't work in local).</h6></div>
+
+  <div class="row search-results">
+    <div class="row airport" *ngFor="let airport of airports; let even = even" [class.even]="even">
+      <app-airport [airport]="airport"></app-airport>
+    </div>
+  </div>
+</div>

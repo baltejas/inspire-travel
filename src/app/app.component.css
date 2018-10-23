@@ -1,0 +1,25 @@
+.link {
+  margin-top: 1em;
+  line-height: 2em;
+  text-align: center;
+}
+
+.link-bootstrap {
+  background-color: #F44336;
+}
+
+.link-mat {
+  background-color: #3F51B5;
+}
+
+.link-dapi {
+  background-color: #FFC107;
+}
+
+.link-mongo {
+  background-color: #9C27B0;
+}
+
+a.link {
+  color: #FFFFFF;
+}

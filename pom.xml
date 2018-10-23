@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.amadeus.dds</groupId>
+    <artifactId>hackathon-webapp-box-aggregator</artifactId>
+    <version>1.6-SNAPSHOT</version>
+  </parent>
+  <artifactId>hackathon-webapp-box-frontend</artifactId>
+  <packaging>jar</packaging>
+  <name>Hackathon Webapp :: Front-end</name>
+
+  <properties>
+    <reports.dir>${project.build.directory}/karma-reports</reports.dir>
+  </properties>
+
+  <dependencies>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-frontend-files</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/frontend</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}</directory>
+                  <filtering>true</filtering>
+                  <excludes>
+                    <exclude>**/node/**</exclude>
+                    <exclude>**/node_modules/**</exclude>
+          					<exclude>**/target/**</exclude>
+          					<exclude>**/dist/**</exclude>
+          					<exclude>**/.settings/**</exclude>
+                  </excludes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>clean-node-modules</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>2.5</version>
+            <executions>
+              <execution>
+                <id>clean-node-modules</id>
+                <goals>
+                  <goal>clean</goal>
+                </goals>
+                <phase>clean</phase>
+                <configuration>
+                  <filesets>
+                    <fileset>
+                      <directory>${basedir}</directory>
+                      <includes>
+                        <include>node_modules/**</include>
+                        <include>node/**</include>
+                      </includes>
+                      <followSymlinks>false</followSymlinks>
+                    </fileset>
+                  </filesets>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

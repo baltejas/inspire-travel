@@ -1,0 +1,26 @@
+<div class="container-fluid mongo-page-container">
+
+  <div class="row">
+    <h3>This showcases connectivity with MongoLab</h3>
+  </div>
+  
+  <div class="row">
+	  <div class="col-xs-4">
+	    <input #name type="text" matInput placeholder="Name"/>
+	 </div>
+	 <div class="col-xs-4">
+	    <input #quantity type="text" matInput placeholder="Quantity"/>
+	 </div>
+	 <button (click)="addItem(name.value, quantity.value)">Add</button>
+  </div>
+
+  <div class="row">
+    List of items:
+  </div>
+
+  <div class="row search-results">
+    <div class="row item" *ngFor="let item of items; let even = even" [class.even]="even">
+      {{item.name}} - {{item.quantity}}
+    </div>
+  </div>
+</div>

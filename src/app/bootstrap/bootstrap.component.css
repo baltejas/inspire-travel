@@ -1,0 +1,25 @@
+.search-page-container {
+  text-align: center;
+  max-width: 40em;
+  background-color: #2196F333;
+  padding: 1.5em;
+  margin-top: 3em;
+}
+
+
+.search-results {
+  padding: 1.5em;
+}
+
+
+.airport {
+  background-color: #FF980033;
+  line-height: 3em;
+}
+.airport.even {
+  background-color: #00968833;
+}
+
+.airport:hover {
+  color: #FF9800;
+}

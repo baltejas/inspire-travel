@@ -1,0 +1,24 @@
+.mongo-page-container {
+  text-align: center;
+  max-width: 40em;
+  background-color: #9C27B044;
+  padding: 1.5em;
+  margin-top: 3em;
+}
+
+
+.search-results {
+  padding: 1.5em;
+}
+
+.item {
+  background-color: #673AB733;
+  line-height: 3em;
+}
+.item.even {
+  background-color: #E91E6333;
+}
+
+.item:hover {
+  color: #FFFFFF;
+}

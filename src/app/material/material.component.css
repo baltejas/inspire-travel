@@ -1,0 +1,10 @@
+.material-container {
+  text-align: center;
+}
+
+.material-card {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 1.5em;
+  margin-top: 3em;
+}
