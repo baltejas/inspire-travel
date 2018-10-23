@@ -1,14 +1,14 @@
 {
   "configVersion": 1,
-  "index": "https://baltejas.github.io/inspire-search/“/index.html",
+  "index": "https://baltejas.github.io/inspire-travel/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://baltejas.github.io/inspire-search/“/favicon.ico",
-        "https://baltejas.github.io/inspire-search/“/index.html"
+        "https://baltejas.github.io/inspire-travel/favicon.ico",
+        "https://baltejas.github.io/inspire-travel/index.html"
       ],
       "patterns": []
     },
@@ -17,18 +17,18 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "https://baltejas.github.io/inspire-search/“/assets/amadeus.png",
-        "https://baltejas.github.io/inspire-search/“/assets/load.gif"
+        "https://baltejas.github.io/inspire-travel/assets/amadeus.png",
+        "https://baltejas.github.io/inspire-travel/assets/load.gif"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://baltejas.github.io/inspire-search/“/assets/amadeus.png": "e7032d470f814cf263dbc43d6ecaf2c9a1b6bfdd",
-    "https://baltejas.github.io/inspire-search/“/assets/load.gif": "26b252a564142db4fd78c3b4b08a430695edb395",
-    "https://baltejas.github.io/inspire-search/“/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://baltejas.github.io/inspire-search/“/index.html": "89cd510a30c68b47990cd836f71369b9a139df6b"
+    "https://baltejas.github.io/inspire-travel/assets/amadeus.png": "e7032d470f814cf263dbc43d6ecaf2c9a1b6bfdd",
+    "https://baltejas.github.io/inspire-travel/assets/load.gif": "26b252a564142db4fd78c3b4b08a430695edb395",
+    "https://baltejas.github.io/inspire-travel/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://baltejas.github.io/inspire-travel/index.html": "ad7f124248cc46b02daacfa033dc78e086a73e46"
   },
   "navigationUrls": [
     {
