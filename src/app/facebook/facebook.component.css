@@ -36,4 +36,9 @@
     width: 45%; 
     margin: 0 auto;
     margin-top: 20px;
+    z-index: 1000;
+}
+
+.fb-login-button {
+    z-index: 900;
 }
