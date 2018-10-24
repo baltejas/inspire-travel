@@ -9,12 +9,31 @@
     color: white !important;
 }
 
-.navbar h3 {
-    text-align: center;
+.center {
+    width: 70%; 
+    margin: 0 auto;
+    border: 1px #ccc solid;
+    border-radius: 2em;
 }
 
-.center {
-    width: 60%; 
+.center h3 {
+    padding-left: 20px;
+}
+.center form {
+    padding: 20px;
+}
+
+.facebook-banner {
+    background-color: #f6f6f6;
+    color: #00205b;
+    font-size: 26px;
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 20px;
+}
+
+.facebook-div {
+    width: 45%; 
     margin: 0 auto;
-    border-radius: 
+    margin-top: 20px;
 }
