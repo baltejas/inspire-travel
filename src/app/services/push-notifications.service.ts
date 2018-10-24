@@ -27,11 +27,12 @@ export class PushNotificationsService {
             body: item.alertContent,
             icon: "../resource/images/bell-icon.png"
         };
-        let notify = new Notification(item.title, options);
-        notify.onclick = function () {
-            window.open("http://google.com/");
+        let notification = new Notification(item.title, options);
+        notification.onclick = function (event) {
+            event.preventDefault();
+            window.open("http://google.com/",'_blank');
         };
-        
+        //setTimeout(notification.close.bind(notification), 7000);
     }
 }
 
