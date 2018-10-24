@@ -23,7 +23,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PushNotificationsService } from './services/push-notifications.service';
 import { FacebookService } from './services/facebook.service';
-
+import { DatabaseService } from './services/database.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { FacebookService } from './services/facebook.service';
     MatButtonModule,
     environment.production ? ServiceWorkerModule.register('ngsw-worker.js'): []
   ],
-  providers: [AirOffersService, DapiAuthenticationService, PushNotificationsService, FacebookService],
+  providers: [AirOffersService, DapiAuthenticationService, 
+              PushNotificationsService, FacebookService, DatabaseService],
   bootstrap: [FacebookComponent]
 })
 export class AppModule { }

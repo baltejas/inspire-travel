@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { PushNotificationsService } from '../services/push-notifications.service';
 import { FacebookService } from '../services/facebook.service';
+import { DatabaseService } from '../services/database.service';
 
 declare var window: any;
 declare var FB: any;
@@ -12,9 +13,15 @@ declare var FB: any;
 })
 export class FacebookComponent {
   
-  private isLoggedIn: boolean = false;
+  isLoggedIn: boolean = false;
 
-  constructor(private _notificationService: PushNotificationsService, private _facebookService: FacebookService) {
+  private accessToken : string;
+
+  private userPosts: any = [];
+
+  constructor(private _notificationService: PushNotificationsService, 
+              private _facebookService: FacebookService,
+              private _databaseService: DatabaseService) {
       this._notificationService.requestPermission();
 
       (function(d, s, id){
@@ -36,40 +43,65 @@ export class FacebookComponent {
       
   }
 
-  notify() {
+  notify(suggestion: string) {
     let data = {
         'title': 'Lets Travel',
-        'alertContent': 'Click here for the best air fare to NYC !!'
+        'alertContent': suggestion
     };
     this._notificationService.generateNotification(data);
-    this.getMessages();
   }
 
   login() {
     let that = this;
     FB.login(function(response) {
       if (response.status === 'connected') {
-        //
+        that.accessToken = response.authResponse.accessToken;
        } else {
         //
       }
     });
     this.isLoggedIn = true;
+  }
+
+  getPosts() {
     setInterval(()=> {
-      this.getLoggedInUserPost(); 
-      }, 4000); 
-    }
+      this.getLoggedInUserPosts(); 
+    }, 5000); 
+    this.getFriendsPosts();
+  }
   
-  getMessages() {
-    this._facebookService.getMessages().subscribe((results) => {
-        console.log(results);
+  getLoggedInUserPosts() {
+    this._facebookService.getLoggedInUserFeed(this.accessToken).subscribe((results) => {
+      if(results["posts"] != undefined) {
+        let posts:[] = results["posts"]["data"];
+        posts.forEach(element => {
+         let message: string = element["message"];
+         if(message.indexOf("travel") > -1) {
+           // Push to database
+           // need to check if post already in db
+           let words: string[] = message.split(" ");
+           this._databaseService.addPost(results["id"], words[words.length - 1]).subscribe();
+         }
+        });
+      }
     });
   }
 
-  getLoggedInUserPost() {
-    this._facebookService.getLoggedInUserFeed().subscribe((results) => {
-        console.log(results);
-    });
+  getFriendsPosts() {
+    this._facebookService.getFriends(this.accessToken).subscribe((results) => {
+      console.log(results);
+      let friends:[] = results["friends"]["data"];
+      friends.forEach(element => {
+        this._databaseService.getPostsByUserId(element["id"]).subscribe((data) => {
+          let post: any = data;
+          post.forEach(e => {
+            let suggestion: string = "Travel to " + e["location"] + " at the best price";
+            this.userPosts.push(suggestion);
+            this.notify(suggestion);
+          })
+        })
+      })
+  });
   }
  
 }

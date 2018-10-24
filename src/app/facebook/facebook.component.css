@@ -42,3 +42,12 @@
 .fb-login-button {
     z-index: 900;
 }
+
+.posts {
+    border: 1px #ccc solid;
+}
+
+.fa-button {
+    background: #3B5998;
+    color: white;
+}

@@ -27,11 +27,15 @@
                 Let's connect with Facebook and see where our friends are travelling.
         </div>
         <div class="facebook-div">
-            <div (click)="login()"> Login
-            </div>
+            <button class="fa-button" (click)="login()">Connect with Facebook</button>
         </div>
     </div>
-    <div *ngIf="isLoggedIn">
-        Hello World
+    <div class="posts" *ngIf="isLoggedIn" (click)="getPosts()">
+        <h3>Click here to see where your friends are travelling</h3>
+       <ul>
+            <li *ngFor="let userPost of userPosts"> 
+                {{ userPost }}
+            </li>
+        </ul>
     </div>
 </div>
