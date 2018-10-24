@@ -1,0 +1,39 @@
+api accounts:
+Access token - 2189450841310526|fYUwQ9zhlooE_XgL22n_6hjcMSI
+App id - 2189450841310526
+
+Url to get all users: https://graph.facebook.com/v3.1/2189450841310526/?fields=accounts
+
+{
+  "accounts": {
+    "data": [
+      {
+        "id": "102983410698365",
+        "login_url": "https://developers.facebook.com/checkpoint/test-user-login/102983410698365/",
+        "access_token": "EAAfHSzZBmRT4BAOGqoEwxmznp8I1wrn4JtbnhyKk9xQ4UybMpAk7p3x2cwDkid1HOsieSnXoPJdQxbVtVi3AqPYqRMVbgPGfM4TWPgR5AeIybpjbKZAAAu5MA9uwgJaikPFmSKvaZAUyiQZBxZCudLbgJrR6OKHbAndzxcEZCtK7mjfMroE2bwp2s2laBVbkHU7L2ksqFGoOjsqOBbFExM"
+      },
+      {
+        "id": "105226300471255",
+        "login_url": "https://developers.facebook.com/checkpoint/test-user-login/105226300471255/",
+        "access_token": "EAAfHSzZBmRT4BANfjfUB016Auzejs2SkesImJhTGYzOW08W1quBqngjuKvfPOPMw6RiDpEkdOkUNNc5gXuweBwxBoutwZCMEwCxZCntacB5vrd4VOZB7EKL2ZBERyyIbujUx8pQxfArWKE5E9exjIHNqWW4qzZCxS9LHjGzqU0AI90PZCX1CvTiRSgekHaHoGAzn0El8ZBW76iQFIIrYqd8O"
+      },
+      {
+        "id": "101394564192303",
+        "login_url": "https://developers.facebook.com/checkpoint/test-user-login/101394564192303/",
+        "access_token": "EAAfHSzZBmRT4BAHcCgzvrgPlrPJqOEKLgKDQwKQgefhIIf1HjOfrnftQmV0ZBikH1EuFp73mwkflbLhwJD3uWcnirdh6Ix5kgK7w2xK6T1V2fAZCZCMKuKxaFDjhXFShsrsXO8qQlEMtmnwY4L50SAOCNbg0cGzpXxMQHmhwSeINXlc9qwrVNepwXAZCHCDGYJhLI64hSnvstdVJOBu2b"
+      }
+    ],
+    "paging": {
+      "cursors": {
+        "before": "QVFIUl9WV0Y5eHNXWUlRbE5aODBkaTJxOEdVZAFVqY09JR2lkQmNORXF6SnRKQVYtOUlmZAFZAFc1dDdTAyY2RNT0xUakJKbktWTGthSUozRWFLaTNFdjlQRWdB",
+        "after": "QVFIUkR6WXNveU5HVWRWU1BUMEd0N3o0U0E5bHRMTkU2OEFGSUJJVjdoeURtT2R4a2RXQ0x6cHE0ZAExzbEhNRXVOOGo4R1lNWGtheWFhMjRQNlhMYVgxVGln"
+      }
+    }
+  },
+  "id": "2189450841310526"
+}
+
+
+Url to get events for a user: https://graph.facebook.com/v3.1/102983410698365/events
+
+Url to get friends for a user: https://graph.facebook.com/v3.1/102983410698365/friends

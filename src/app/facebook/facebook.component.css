@@ -1,0 +1,20 @@
+* {
+    font-family: Calibri;
+}
+
+.navbar {
+    background-color: #00205b;
+}
+.navbar-default a, .navbar-default h3 {
+    color: white !important;
+}
+
+.navbar h3 {
+    text-align: center;
+}
+
+.center {
+    width: 60%; 
+    margin: 0 auto;
+    border-radius: 
+}
