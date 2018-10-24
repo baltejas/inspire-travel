@@ -46,17 +46,28 @@ export class FacebookComponent {
   }
 
   login() {
+    let that = this;
     FB.login(function(response) {
       if (response.status === 'connected') {
-        this.isLoggedIn = true;
-      } else {
-        this.isLoggedIn = false;
+        //
+       } else {
+        //
       }
+    });
+    this.isLoggedIn = true;
+    setInterval(()=> {
+      this.getLoggedInUserPost(); 
+      }, 4000); 
+    }
+  
+  getMessages() {
+    this._facebookService.getMessages().subscribe((results) => {
+        console.log(results);
     });
   }
 
-  getMessages() {
-    this._facebookService.getMessages().subscribe((results) => {
+  getLoggedInUserPost() {
+    this._facebookService.getLoggedInUserFeed().subscribe((results) => {
         console.log(results);
     });
   }

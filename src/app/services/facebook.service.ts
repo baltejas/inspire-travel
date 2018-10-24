@@ -7,12 +7,16 @@ const headers = new HttpHeaders()
 @Injectable()
 export class FacebookService {
     
-    baseUrl: string = "https://graph.facebook.com/v3.1/me";
-    test: string = "?access_token=EAAfHSzZBmRT4BAChpNRWxltXNU51czUhlk0R70IK8BYea9cUZCeqZCXwUqr9apZCjZAy6Lur5AMF4SaJ2iHPOOFjCwPfvEPsKMkmBmUhhjDcQs9iVOEe4wtrM4QumwOK6CZCmADZBqS5YAq4gtt9StN8bpG84uosc3rQCEbCtxsRiC7Y8EE4gpZBDSSupLbbnmw"
+    baseUrlForMe: string = "https://graph.facebook.com/v3.2/me";
+    accessToken: string = "?access_token=EAAfHSzZBmRT4BAO2u019yevzlgU4Xt9Nm2PvPOc43f8XzjT7CL1yOSIIB59QaXblF6G4xieZAMuJ2wf0kIIQ7TDqvS45bM0pMl3bW3MaWfMfHyUNe6ZAHxFyZBd2NjpBIs1OeSfOobiKBuZBvz09gWaXwDkpD2RBfnA2ZByPRxbN3T8oUkEhUWcRj5wQn1NnYZD";
     
     constructor(private http: HttpClient) {}
    
     getMessages() {
-        return this.http.get(this.baseUrl + this.test);
+        return this.http.get(this.baseUrlForMe + this.accessToken);
+    }
+
+    getLoggedInUserFeed() {
+        return this.http.get(this.baseUrlForMe + this.accessToken + "&fields=id,name,posts&format=json&method=get");
     }
 }
