@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, ChangeDetectorRef} from '@angular/core';
 import { PushNotificationsService } from '../services/push-notifications.service';
 import { FacebookService } from '../services/facebook.service';
 import { DatabaseService } from '../services/database.service';
@@ -21,7 +21,8 @@ export class FacebookComponent {
 
   constructor(private _notificationService: PushNotificationsService, 
               private _facebookService: FacebookService,
-              private _databaseService: DatabaseService) {
+              private _databaseService: DatabaseService,
+              private ref: ChangeDetectorRef) {
       this._notificationService.requestPermission();
 
       (function(d, s, id){
@@ -56,6 +57,7 @@ export class FacebookComponent {
     FB.login(function(response) {
       if (response.status === 'connected') {
         that.accessToken = response.authResponse.accessToken;
+        that.getPosts();
        } else {
         //
       }
@@ -66,8 +68,10 @@ export class FacebookComponent {
   getPosts() {
     setInterval(()=> {
       this.getLoggedInUserPosts(); 
-    }, 5000); 
-    this.getFriendsPosts();
+    }, 5000);
+    setTimeout(()=> {
+      this.getFriendsPosts();
+    }, 2000)
   }
   
   getLoggedInUserPosts() {
@@ -89,19 +93,20 @@ export class FacebookComponent {
 
   getFriendsPosts() {
     this._facebookService.getFriends(this.accessToken).subscribe((results) => {
-      console.log(results);
       let friends:[] = results["friends"]["data"];
       friends.forEach(element => {
         this._databaseService.getPostsByUserId(element["id"]).subscribe((data) => {
           let post: any = data;
           post.forEach(e => {
-            let suggestion: string = "Travel to " + e["location"] + " at the best price";
+            let suggestion: string = "Your friend " + element["name"] + " is travelling to " + e["location"] 
+                + ". Would you like to visit " +  e["location"] + " too ? Tap for the best fares !";
             this.userPosts.push(suggestion);
+            this.ref.detectChanges();
             this.notify(suggestion);
           })
         })
       })
-  });
+    });
   }
  
 }

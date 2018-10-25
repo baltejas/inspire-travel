@@ -1,41 +1,44 @@
 <div class="container">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Amadeus Airlines</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="#">Book</a></li>
-                <li><a href="#">Explore</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header class="header">
+        <h2>Amadeus Airlines</h2>
+        <h3>Let's go somewhere</h3>
+    </header>
     <div class="center">
-        <h3>Flights</h3>
         <form class="form">
+            <div class="form-group">
+                <label class="radio-inline"><input type="radio" name="optradio">Roundtrip</label>
+                <label class="radio-inline"><input type="radio" name="optradio">One-way</label>
+            </div>
             <div class="form-group">
             <input type="text" class="form-control" id="from" value="Where from?">
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" id="to" value="Where to?">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <div class="form-group">
+                <input type="text" class="form-control" id="to" value="Select Date">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="to" value="Select Date">
+            </div>
+            <button type="submit" class="btn btn-default">Search Flights</button>
         </form> 
     </div>
+</div>
+<div class="facebook-banner">
+    Let's connect with Facebook and see where your friends are travelling.
     <div *ngIf="!isLoggedIn">
-        <div class="facebook-banner">
-                Let's connect with Facebook and see where our friends are travelling.
-        </div>
-        <div class="facebook-div">
-            <button class="fa-button" (click)="login()">Connect with Facebook</button>
-        </div>
+        <button class="loginBtn loginBtn--facebook" (click)="login()">Connnect with Facebook</button>
     </div>
-    <div class="posts" *ngIf="isLoggedIn" (click)="getPosts()">
-        <h3>Click here to see where your friends are travelling</h3>
-       <ul>
-            <li *ngFor="let userPost of userPosts"> 
-                {{ userPost }}
-            </li>
-        </ul>
+    <div class="table" *ngIf="isLoggedIn" > 
+        <table>
+            <tbody>
+                <tr class="tr" *ngFor="let userPost of userPosts let index=index; let odd=odd; let even=even;"
+                    [ngClass]="{odd: odd, even: even }">
+                    <td class="success">{{ userPost }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+
